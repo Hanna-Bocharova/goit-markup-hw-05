@@ -27,6 +27,7 @@ body {
 .link {
   text-decoration: none;
   color: inherit;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list {
@@ -107,6 +108,19 @@ img {
   letter-spacing: 0.02em;
   color: var(--color-secondary);
 }
+.current {
+  position: relative;
+}
+.header-link.current::after {
+  position: absolute;
+  content: ' ';
+  display: block;
+  background-color: var(--color-accent);
+  margin-top: 28px;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+}
 
 .mail::after {
   content: 'info@devstudio.com';
@@ -136,6 +150,10 @@ img {
 .current,
 .accent {
   color: var(--color-accent);
+}
+
+.current::after {
+  content: ' ';
 }
 
 .header-contakts-link:hover,
@@ -274,11 +292,10 @@ img {
   width: 270px;
 }
 
+/* activity */
 .section-activity {
   margin-top: -94px;
 }
-
-/* activity */
 
 .picture-activity:not(:last-child) {
   margin-right: 30px;
@@ -288,6 +305,40 @@ img {
 .client-caption {
   text-align: center;
 }
+
+.picture-activity {
+  position: relative;
+}
+
+.picture-activity::before {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(47, 48, 58, 0.8);
+  content: ' ';
+  width: 100%;
+  height: 70px;
+}
+
+.item-activity {
+  bottom: 27px;
+  position: absolute;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.17;
+  color: var(--color-tertiary);
+  left: 25%;
+}
+/* .one {
+  left: 83px;
+}
+
+.two {
+  left: 86px;
+}
+
+.three {
+  left: 91px;
+} */
 
 /* team */
 
@@ -534,14 +585,24 @@ img {
 }
 
 .element-project {
+  position: relative;
   box-sizing: border-box;
   width: 370px;
   height: 404px;
   margin-bottom: 30px;
   background-color: rgba(255, 255, 255, 1);
+  overflow: hidden;
 }
 .project-link {
   display: block;
+}
+
+.project-img {
+  display: block;
+  position: relative;
+  width: 370px;
+  height: 294px;
+  overflow: hidden;
 }
 
 .project-link:hover {
@@ -558,6 +619,7 @@ img {
 
   margin-bottom: 4px;
 }
+
 .projects-items {
   font-size: 16px;
   line-height: 1.88;
@@ -571,6 +633,26 @@ img {
   border-right: 1px solid var(--color-button-secondary);
 }
 
+.project-overlay {
+  position: absolute;
+  padding: 63px 24px;
+  top: 0;
+  left: 0;
+
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--color-tertiary);
+  background-color: var(--color-accent);
+
+  transform: translateY(410px);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+
+.project-link:hover .project-overlay {
+  transform: translateY(0);
+}
+
 .button-caption {
   display: none;
 }
@@ -582,4 +664,61 @@ img {
 
 .btn-list {
   margin-right: 8px;
+}
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 400px;
+  border-radius: 4px;
+
+  background-color: var(--color-tertiary);
+}
+.overlay-button {
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  transform: translate(-75%, -75%);
+
+  margin: 3px 4px 4px 4px;
+  border: 1px solid var(--color-tertiary);
+}
+
+.modal-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 0;
+
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--color-tertiary);
+  cursor: pointer;
 }
