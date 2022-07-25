@@ -150,6 +150,8 @@ img {
 .current,
 .accent {
   color: var(--color-accent);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .current::after {
@@ -160,6 +162,8 @@ img {
 .header-contakts-link:focus {
   color: var(--color-accent);
   fill: var(--color-accent);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .header-contakts-icon {
@@ -232,7 +236,7 @@ img {
   padding: 10px 32px;
 }
 
-.button .active {
+.button.active {
   background-color: var(--color-accent);
   color: var(--color-tertiary);
   cursor: pointer;
@@ -328,17 +332,6 @@ img {
   color: var(--color-tertiary);
   left: 25%;
 }
-/* .one {
-  left: 83px;
-}
-
-.two {
-  left: 86px;
-}
-
-.three {
-  left: 91px;
-} */
 
 /* team */
 
@@ -402,12 +395,14 @@ img {
   display: block;
   width: 44px;
   height: 44px;
+  border-radius: 50%;
 }
 
 .social-icon-item:hover,
 .social-icon-item:focus {
-  border-radius: 50%;
   background-color: var(--color-accent);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .social-icon {
@@ -418,6 +413,8 @@ img {
 
 .social-icon:hover {
   fill: var(--color-tertiary);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 /*    clients   */
@@ -430,11 +427,11 @@ img {
   justify-content: center;
   cursor: pointer;
   fill: var(--color-client);
+  border: 1px solid var(--color-client);
+  border-radius: 4px;
 }
 
 .list-icon {
-  border: 1px solid var(--color-client);
-  border-radius: 4px;
   width: 170px;
   height: 92px;
 }
@@ -445,8 +442,16 @@ img {
 
 .icon-link:hover,
 .icon-link:focus {
-  border: 1px solid var(--color-accent);
   fill: var(--color-accent);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+
+.icon-link:hover,
+.icon-link:focus {
+  border: 1px solid var(--color-accent);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 /* footer */
@@ -464,6 +469,8 @@ img {
 .footer-contakts-link:hover,
 .footer-contakts-link:focus {
   color: var(--color-accent);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .footer-contakts-list .items {
@@ -530,6 +537,8 @@ img {
   cursor: pointer;
   border-radius: 50%;
   background-color: var(--color-accent);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 /* portfolio */
@@ -568,6 +577,8 @@ img {
 .button:focus {
   background-color: var(--color-accent);
   color: var(--color-tertiary);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 /* projects */
@@ -593,6 +604,7 @@ img {
   background-color: rgba(255, 255, 255, 1);
   overflow: hidden;
 }
+
 .project-link {
   display: block;
 }
@@ -666,6 +678,8 @@ img {
   margin-right: 8px;
 }
 
+/* modal */
+
 .backdrop {
   position: fixed;
   left: 0;
@@ -696,8 +710,14 @@ img {
 
   background-color: var(--color-tertiary);
 }
+
 .overlay-button {
   position: relative;
+}
+
+.project-overlay {
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 1250ms;
 }
 
 .close-button {
